@@ -1,0 +1,66 @@
+{
+  "esquema": 1,
+  "equipo": "Cypress",
+  "herramienta": "cypress",
+  "nombre": "Cypress",
+  "fecha": "2026-10-30T18:39:08.681Z",
+  "entorno": {
+    "node": "v26.12.0",
+    "sistema": "win32 x64"
+  },
+  "corridas": {
+    "total": 5,
+    "completas": 5,
+    "conFallos": 0,
+    "segundos": [
+      10.96,
+      11.03,
+      11.23,
+      10.94,
+      10.62
+    ],
+    "mediana": 10.96,
+    "minimo": 10.62,
+    "maximo": 11.23
+  },
+  "pruebas": {
+    "esperadas": 3,
+    "pasanEnLaUltimaCorrida": 3
+  },
+  "codigo": {
+    "pruebas": 35,
+    "soporte": 11,
+    "total": 46
+  },
+  "paquetes": {
+    "cypress": {
+      "instalada": "16.2.0",
+      "ultimaVersion": "16.2.1",
+      "ultimaPublicacion": "2026-10-28T14:20:32.633Z",
+      "dias": 2
+    }
+  },
+  "autoinforme": {
+    "equipo": "Cypress",
+    "integrantes": [
+      "John Erick Hoyos"
+    ],
+    "escenario": "E3 - Seguro del valle",
+    "usoDeIA": "Para solución de errores",
+    "minutos": {
+      "instalacion": 4,
+      "ca2": 10,
+      "ca3": 30
+    },
+    "diagnostico": {
+      "diceQueFallo": true,
+      "esperadoYRecibido": true,
+      "lineaDeLaPrueba": true,
+      "capturaOVideo": true,
+      "trazaOInforme": true
+    },
+    "notas": "",
+    "puntosDiagnostico": 5,
+    "sinResponder": 0
+  }
+}

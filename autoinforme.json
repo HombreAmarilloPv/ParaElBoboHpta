@@ -1,19 +1,19 @@
 {
-  "equipo": "",
-  "integrantes": [],
-  "escenario": "",
-  "usoDeIA": "",
+  "equipo": "Cypress",
+  "integrantes": ["John Erick Hoyos"],
+  "escenario": "E3 - Seguro del valle",
+  "usoDeIA": "Para solución de errores",
   "minutos": {
-    "instalacion": null,
-    "ca2": null,
-    "ca3": null
+    "instalacion": 4,
+    "ca2": 10,
+    "ca3": 30
   },
   "diagnostico": {
-    "diceQueFallo": null,
-    "esperadoYRecibido": null,
-    "lineaDeLaPrueba": null,
-    "capturaOVideo": null,
-    "trazaOInforme": null
+    "diceQueFallo": true,
+    "esperadoYRecibido": true,
+    "lineaDeLaPrueba": true,
+    "capturaOVideo": true,
+    "trazaOInforme": true
   },
   "notas": ""
 }

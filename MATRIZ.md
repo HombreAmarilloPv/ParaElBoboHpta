@@ -1,7 +1,7 @@
 # Matriz de decisión
 
-**Equipo:** ______________________  
-**Escenario:** ______________________
+**Equipo:** Cypress  
+**Escenario:** E3 · Seguros del Valle — Aseguradora con 600 pruebas heredadas en Selenium
 
 Las tres opciones son las mismas de la presentación: **Selenium** (con Mocha en este duelo), **Cypress** y **Playwright**.
 La pregunta de si hace falta una capa BDD (Cucumber) por encima va aparte, en el `ADR.md`.
@@ -37,25 +37,26 @@ La pregunta de si hace falta una capa BDD (Cucumber) por encima va aparte, en el
 
 | Criterio | Peso | Selenium | Cypress | Playwright | ¿Por qué ese peso? · Evidencia de los puntajes |
 |---|---:|:---:|:---:|:---:|---|
-| 1 · Encaje | | | | | |
-| 2 · Cobertura | | | | | |
-| 3 · Estabilidad | | | | | |
-| 4 · Diagnóstico | | | | | |
-| 5 · Velocidad | | | | | |
-| 6 · Integración | | | | | |
-| 7 · Comunidad y futuro | | | | | |
-| 8 · Costo total | | | | | |
-| **Total ponderado** (máx. 5,00) | **100** | | | | |
+| 1 · Encaje | 20 | 5 | 1 | 3 | El equipo sabe Java y no TypeScript, y ya tiene 600 pruebas en Selenium Java. |
+| 2 · Cobertura | 15 | 5 | 3 | 3 | Necesitan Chrome, Edge y Firefox, y en el futuro la app móvil nativa. |
+| 3 · Estabilidad | 15 | 2 | 4 | 5 | El 30 % de las pruebas se rompe con cada cambio de interfaz. |
+| 4 · Diagnóstico | 5 | 2 | 5 | 4 | Hay 3 testers dedicados para depurar, así que pesa menos. |
+| 5 · Velocidad | 5 | 3 | 3 | 5 | Nadie se queja de la velocidad; su problema es el mantenimiento. |
+| 6 · Integración | 10 | 5 | 2 | 3 | La Grid ya está pagada y la opera infraestructura. |
+| 7 · Comunidad y futuro | 10 | 5 | 3 | 4 | La decisión es para años, porque migrar cuesta un trimestre. |
+| 8 · Costo total | 20 | 3 | 1 | 2 | Es el dolor del cliente: hoy pierden 2 días por sprint, y migrar todo frena las entregas un trimestre. |
+| **Total ponderado** (máx. 5,00) | **100** | **3,9** | **2,35** | **3,35** | Gana: Selenium |
 
 *(Pueden usar la calculadora de la clase —`matriz.html` en el sitio del duelo— y copiar la tabla.)*
 
 ## Prueba de sensibilidad
 
-- Criterio que subimos 10 puntos: ______________ (se lo bajamos a: ______________)
-- ¿Cambió el ganador? ☐ No ☐ Sí → ahora gana: ______________
-- Lo que esto nos dice de nuestra decisión:
+- Criterio que subimos 10 puntos: Estabilidad (se lo bajamos a: Costos)
+- ¿Cambió el ganador? ☐ No ☐ Sí → ahora gana: Selenium de igual manera
+- Lo que esto nos dice de nuestra decisión: Que con la herramienta dada, se nos complicaría mucho realizar esto ya que cypress es la que
+tiene el puntaje más bajo entre los 3
 
 ## Ganador de la matriz
 
-**______________________** con ______ puntos sobre 5,00.
+**Selenium** con 3,9 puntos sobre 5,00.
 ¿Coincide con lo que habríamos elegido antes de medir? ☐ Sí ☐ No → ¿qué cambió?

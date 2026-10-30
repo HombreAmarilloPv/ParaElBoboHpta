@@ -18,7 +18,6 @@ describe('Duelo · tres criterios de aceptación', () => {
     // Dado   un producto con stock 6 (la Mochila escolar),
     // Cuando intento agregar 7 unidades de una vez,
     // Entonces veo un aviso con el stock disponible y no se agrega nada.
-    //
     cy.visit('/');
 
     const aviso = cy.stub().as('aviso');
@@ -33,17 +32,21 @@ describe('Duelo · tres criterios de aceptación', () => {
 
   // ------------------------------------------------------------------ TU TURNO · US-09 CA1
   it('US-09 CA1: DESC10 descuenta el 10 % del subtotal', () => {
+    // Dado   un carrito con productos (1 Mochila escolar, $ 65.000),
+    // Cuando aplico el código DESC10,
+    // Entonces el descuento es el 10 % del subtotal: $ 6.500.
     cy.visit('/');
 
     // Seleccionar cantidad
     cy.contains('h3', 'Mochila escolar')
       .parent()
       .within(() => {
-        cy.get('input[type="number"]').clear().type('1');
-        cy.get('button').contains('Aplicar').click();
+        cy.contains('button', 'Agregar')
+          .should('be.visible')
+          .and('be.enabled')
+          .click();
       });
 
-    // Aplicar descuento
     cy.contains('h2', 'Carrito').parent().within(() => {
       cy.get('input[placeholder="Código de descuento"]').type('DESC10');
       cy.contains('button', 'Aplicar').click();
@@ -52,17 +55,8 @@ describe('Duelo · tres criterios de aceptación', () => {
     // Verificar descuento
     cy.contains('dt', /^Descuento/)
       .siblings('dd')
-      .should('contain.text', '$ 6.500');
+      .should('contain.text', '6.500');
 
-
-    // Dado   un carrito con productos (1 Mochila escolar, $ 65.000),
-    // Cuando aplico el código DESC10,
-    // Entonces el descuento es el 10 % del subtotal: $ 6.500.
-    //
-    // Pistas:
-    //  · Agregar la mochila: el botón «Agregar» de SU tarjeta (la cantidad por defecto es 1).
-    //  · El campo del código: cy.get('input[placeholder="Código de descuento"]').type('DESC10'); botón «Aplicar».
-    //  · El valor está en la fila cuyo <dt> empieza por «Descuento»:
-    //    cy.contains('dt', /^Descuento/).siblings('dd').should('contain.text', '...').
   });
+
 });
